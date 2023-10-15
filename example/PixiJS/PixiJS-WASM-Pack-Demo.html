@@ -20,11 +20,11 @@
         xhr.responseType = "arraybuffer";
 	    xhr.send();
 	};
-
+    var pack_manager = null;
     var CreatureModule = {
         preRun: [],
         postRun: (function() {
-            var pack_manager = new CreatureModule.PackManager();
+            pack_manager = new CreatureModule.PackManager();
             console.log("Loaded WebAssembly.");
             loadFile("../raptor_data.creature_pack", function(response) {
                 var byte_array = new Uint8Array(response);
